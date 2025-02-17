@@ -62,7 +62,7 @@ Copy the password and paste it into the login form on the Jenkins web page.
 10. Set Up Admin Username and Password
 After the plugin installation is complete, you’ll be asked to create an admin user.
 
-Username: Abhishek-2502
+Username: Arnav2503
 Choose your preferred password.
 11. Install Suggested Plugins
 Once logged in, Jenkins will prompt you to install the suggested plugins. Click on "Install suggested plugins" to continue.
