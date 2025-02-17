@@ -9,6 +9,7 @@ Steps
 Start by updating your system to ensure all packages are up-to-date.
 
 sudo apt update
+
 2. Install Java
 Jenkins requires Java, so we will install OpenJDK 17.
 
@@ -21,19 +22,23 @@ Ensure it shows something like this:
 openjdk version "17.0.x" 2021-09-14
 OpenJDK Runtime Environment (build 17.0.x+xx)
 OpenJDK 64-Bit Server VM (build 17.0.x+xx, mixed mode, sharing)
+
 3. Add Jenkins GPG Key
 Next, you need to add Jenkins' official GPG key to your system for package verification.
 
 wget -O - https://pkg.jenkins.io/debian/jenkins.io-2023.key | sudo tee /usr/share/keyrings/jenkins-keyring.asc > /dev/null
+
 4. Add Jenkins Repository
 Add the Jenkins repository to your sources list.
 
 echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] https://pkg.jenkins.io/debian binary/" | sudo tee /etc/apt/sources.list.d/jenkins.list > /dev/null
+
 5. Install Jenkins
 Update your package lists and install Jenkins:
 
 sudo apt update
 sudo apt-get install jenkins -y
+
 6. Start Jenkins
 Enable Jenkins to start automatically on boot, and then start the service:
 
@@ -49,10 +54,12 @@ Ensure that you can access Jenkins by modifying the inbound rules of your EC2 in
 
 Add a custom TCP rule for port 8080.
 Set the source to MyIP to allow access from your local machine.
+
 8. Access Jenkins Web Interface
 Open your browser and navigate to the following URL, replacing <PublicIPv4> with your EC2 instance's public IPv4 address:
 
 http://<PublicIPv4>:8080
+
 9. Retrieve Jenkins Admin Password
 The first time you access Jenkins, it will ask for an initial admin password. Retrieve the password by running this command on your EC2 instance:
 
@@ -64,6 +71,7 @@ After the plugin installation is complete, you’ll be asked to create an admin 
 
 Username: Arnav2503
 Choose your preferred password.
+
 11. Install Suggested Plugins
 Once logged in, Jenkins will prompt you to install the suggested plugins. Click on "Install suggested plugins" to continue.
 
